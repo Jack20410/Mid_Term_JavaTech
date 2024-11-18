@@ -8,3 +8,5 @@ For employee account:
 "employee1 - employee123"
 
 Create database base on provided SQL (main/resources/database.sql)
+
+Run "test/java/ImportTest.java" to get sample student data
