@@ -13,8 +13,15 @@ public class LoginScreen extends JPanel {
 
     public LoginScreen(AppFrame frame) {
         this.parentFrame = frame;
-        setLayout(new GridBagLayout());
+        setLayout(new BorderLayout()); // Change layout to BorderLayout
 
+        // Add title at the top
+        JLabel titleLabel = new JLabel("Welcome to Student Management!", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        add(titleLabel, BorderLayout.NORTH);
+
+        // Form panel for login fields
+        JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Add padding
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -22,28 +29,31 @@ public class LoginScreen extends JPanel {
         JLabel userLabel = new JLabel("Username:");
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(userLabel, gbc);
+        formPanel.add(userLabel, gbc);
 
         userText = new JTextField(20);
         gbc.gridx = 1;
-        add(userText, gbc);
+        formPanel.add(userText, gbc);
 
         JLabel passwordLabel = new JLabel("Password:");
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(passwordLabel, gbc);
+        formPanel.add(passwordLabel, gbc);
 
         passwordText = new JPasswordField(20);
         gbc.gridx = 1;
-        add(passwordText, gbc);
+        formPanel.add(passwordText, gbc);
 
         JButton loginButton = new JButton("Login");
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(loginButton, gbc);
+        formPanel.add(loginButton, gbc);
 
+        add(formPanel, BorderLayout.CENTER); // Add form panel to the center
+
+        // Login button functionality
         loginButton.addActionListener(e -> {
             String username = userText.getText();
             String password = new String(passwordText.getPassword());
