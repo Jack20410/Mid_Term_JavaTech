@@ -6,3 +6,5 @@ For manager account:
 
 For employee account:
 "employee1 - employee123"
+
+Create database base on provided SQL (main/resources/database.sql)
