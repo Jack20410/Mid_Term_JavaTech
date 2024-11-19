@@ -42,6 +42,6 @@ CREATE TABLE LoginHistory (
 
 -- Insert a default Admin user
 INSERT INTO Users (UserName, Role, PasswordHash, IsActive)
-VALUES ('Admin', 'Admin', MD5('admin123'), TRUE);
-VALUES ('manager1', 'Manager', MD5('manager123'), TRUE);
-VALUES ('employee1', 'Employee', MD5('employee123'), TRUE);
+VALUES ('Admin', 'Admin', MD5('admin123'), TRUE),
+ ('manager1', 'Manager', MD5('manager123'), TRUE),
+ ('employee1', 'Employee', MD5('employee123'), TRUE);
